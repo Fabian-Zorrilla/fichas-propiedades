@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selección · Dptos en venta · Bariloche</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f7f7f5; color: #1a1a1a; }
+
+  .page-header { background: #1a1a1a; color: #fff; padding: 24px 20px; }
+  .page-header p { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #ff8c42; margin-bottom: 6px; }
+  .page-header h1 { font-size: 20px; font-weight: 700; }
+  .page-header span { font-size: 12px; color: #aaa; }
+
+  .prop { background: #fff; border-radius: 16px; margin: 16px; overflow: hidden; border: 1px solid #ebebeb; }
+
+  /* CARRUSEL */
+  .carousel { position: relative; background: #000; }
+  .carousel-track { display: flex; transition: transform 0.3s ease; }
+  .carousel-track img { min-width: 100%; width: 100%; height: 240px; object-fit: cover; flex-shrink: 0; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.45); color: #fff; border: none; font-size: 22px; padding: 8px 14px; cursor: pointer; border-radius: 6px; z-index: 2; }
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
+  .carousel-dots { position: absolute; bottom: 10px; width: 100%; display: flex; justify-content: center; gap: 6px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; }
+  .dot.active { background: #fff; }
+  .foto-count { position: absolute; top: 10px; right: 12px; background: rgba(0,0,0,0.5); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 99px; }
+
+  .prop-body { padding: 16px; }
+  .prop-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+  .prop-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+  .prop-price { font-size: 16px; font-weight: 700; color: #ff8c42; white-space: nowrap; }
+  .prop-loc { font-size: 12px; color: #888; margin-bottom: 10px; }
+  .specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .spec { background: #f7f7f5; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: #444; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tag { border: 1px solid #ebebeb; border-radius: 99px; padding: 3px 10px; font-size: 11px; color: #555; }
+  .prop-desc { font-size: 13px; line-height: 1.6; color: #444; margin-bottom: 12px; }
+  .fin { background: #fff8f3; border-left: 3px solid #ff8c42; border-radius: 0 8px 8px 0; padding: 8px 12px; font-size: 12px; color: #333; margin-bottom: 4px; }
+
+  .footer { text-align: center; font-size: 11px; color: #ccc; padding: 24px 0 40px; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <p>Selección de propiedades · Bariloche</p>
+  <h1>Departamentos en venta · hasta USD 100.000</h1>
+  <span>7 propiedades seleccionadas · junio 2026</span>
+</div>
+
+<!-- PROP 1 -->
+<div class="prop">
+  <div class="carousel" id="c0">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/58/49/93/02/1200x1200/2058453594.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/49/93/02/360x266/2058453608.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/49/93/02/360x266/2058453605.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/49/93/02/360x266/2058453584.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/49/93/02/360x266/2058453589.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c0',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c0',1)">&#8250;</button>
+    <div class="carousel-dots" id="c0-dots"></div>
+    <div class="foto-count" id="c0-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Depto · Villegas al 1200</div><div class="prop-price">USD 74.000</div></div>
+    <div class="prop-loc">Centro · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">40 m²</span><span class="spec">2 amb</span><span class="spec">1 dorm</span><span class="spec">1 baño</span></div>
+    <div class="tags"><span class="tag">A estrenar</span><span class="tag">Planta baja</span><span class="tag">Muy luminoso</span><span class="tag">Entrega sept. 2026</span></div>
+    <div class="prop-desc">Proyecto en pozo sobre Villegas al 1200. Acceso inmediato a comercios y transporte. Ideal vivienda permanente o renta turística.</div>
+    <div class="fin">Financiación: 50% anticipo + 18 cuotas fijas</div>
+  </div>
+</div>
+
+<!-- PROP 2 -->
+<div class="prop">
+  <div class="carousel" id="c1">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/55/64/06/41/1200x1200/2025050039.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/55/64/06/41/360x266/2025050043.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/55/64/06/41/360x266/2025050070.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/55/64/06/41/360x266/2025050069.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/55/64/06/41/360x266/2025050071.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c1',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c1',1)">&#8250;</button>
+    <div class="carousel-dots" id="c1-dots"></div>
+    <div class="foto-count" id="c1-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Emprendimiento · Salta al 500</div><div class="prop-price">USD 88.000</div></div>
+    <div class="prop-loc">Centro · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">96 m²</span><span class="spec">2 amb</span><span class="spec">20 unidades</span></div>
+    <div class="tags"><span class="tag">Emprendimiento</span><span class="tag">Financiación</span></div>
+    <div class="prop-desc">Complejo Millennials 2 en el centro de Bariloche. Unidades de 1 a 2 ambientes entre 23 y 96 m². Diseño moderno con financiación disponible.</div>
+  </div>
+</div>
+
+<!-- PROP 3 -->
+<div class="prop">
+  <div class="carousel" id="c2">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/50/29/02/51/1200x1200/1829214490.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/50/29/02/51/360x266/1829214476.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/50/29/02/51/360x266/1829214472.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/50/29/02/51/360x266/1829214474.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/50/29/02/51/360x266/1829214488.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c2',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c2',1)">&#8250;</button>
+    <div class="carousel-dots" id="c2-dots"></div>
+    <div class="foto-count" id="c2-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Depto · Combate San Carlos 3510</div><div class="prop-price">USD 95.000</div></div>
+    <div class="prop-loc">Centro · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">40 m²</span><span class="spec">2 amb</span><span class="spec">1 dorm</span><span class="spec">1 coch</span></div>
+    <div class="tags"><span class="tag">Apto turístico</span><span class="tag">Con cochera</span></div>
+    <div class="prop-desc">Departamento de 1 dormitorio apto turístico con cochera incluida. Ideal para inversión con renta turística en Bariloche.</div>
+  </div>
+</div>
+
+<!-- PROP 4 -->
+<div class="prop">
+  <div class="carousel" id="c3">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/59/38/70/28/1200x1200/2059951558.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/38/70/28/360x266/2059951554.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/38/70/28/360x266/2059951560.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/38/70/28/360x266/2059951551.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/38/70/28/360x266/2059951556.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c3',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c3',1)">&#8250;</button>
+    <div class="carousel-dots" id="c3-dots"></div>
+    <div class="foto-count" id="c3-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Depto · Suipacha 3784 — Vista al lago</div><div class="prop-price">USD 98.000</div></div>
+    <div class="prop-loc">Las Victorias · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">33 m²</span><span class="spec">2 amb</span><span class="spec">1 dorm</span><span class="spec">1 coch</span></div>
+    <div class="tags"><span class="tag">Vista al lago</span><span class="tag">Con cochera</span><span class="tag">Las Victorias</span></div>
+    <div class="prop-desc">Departamento con vista al lago Nahuel Huapi en el barrio Las Victorias. Incluye cochera. Excelente oportunidad en zona residencial tranquila.</div>
+  </div>
+</div>
+
+<!-- PROP 5 -->
+<div class="prop">
+  <div class="carousel" id="c4">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/57/91/41/67/1200x1200/2027850744.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/91/41/67/360x266/2027850738.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/91/41/67/360x266/2027850732.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/91/41/67/360x266/2027850735.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/91/41/67/360x266/2027850734.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c4',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c4',1)">&#8250;</button>
+    <div class="carousel-dots" id="c4-dots"></div>
+    <div class="foto-count" id="c4-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Emprendimiento Cipresales · Gallardo al 900</div><div class="prop-price">USD 96.500</div></div>
+    <div class="prop-loc">Los Cipresales · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">74 m²</span><span class="spec">1-4 amb</span><span class="spec">4 módulos</span></div>
+    <div class="tags"><span class="tag">Vista al lago</span><span class="tag">SUM · Gimnasio · Piscina</span><span class="tag">Paneles solares</span></div>
+    <div class="prop-desc">Desarrollo residencial en Av. Pioneros km 2. 4 módulos con vistas excepcionales al lago. Amenities completos. Eficiencia energética con paneles solares.</div>
+    <div class="fin">Financiación: 40% anticipo + 24 cuotas + 10% contra entrega</div>
+  </div>
+</div>
+
+<!-- PROP 6 -->
+<div class="prop">
+  <div class="carousel" id="c5">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/56/60/35/69/1200x1200/1985158772.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/60/35/69/360x266/1985158778.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/60/35/69/360x266/1985158773.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/60/35/69/360x266/1985158799.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/60/35/69/360x266/1985158769.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c5',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c5',1)">&#8250;</button>
+    <div class="carousel-dots" id="c5-dots"></div>
+    <div class="foto-count" id="c5-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Depto · Centro — A estrenar</div><div class="prop-price">USD 95.000</div></div>
+    <div class="prop-loc">Centro · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">48 m²</span><span class="spec">2 amb</span><span class="spec">1 dorm</span></div>
+    <div class="tags"><span class="tag">A estrenar</span><span class="tag">Centro</span></div>
+    <div class="prop-desc">Departamento a estrenar en el centro de Bariloche. 48 m², diseño moderno y funcional. Excelente ubicación.</div>
+  </div>
+</div>
+
+<!-- PROP 7 -->
+<div class="prop">
+  <div class="carousel" id="c6">
+    <div class="carousel-track">
+      <img src="https://imgar.zonapropcdn.com/avisos/resize/1/00/59/15/72/60/1200x1200/2054020714.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/15/72/60/360x266/2054020750.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/15/72/60/360x266/2054020721.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/15/72/60/360x266/2054020724.jpg" alt="">
+      <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/15/72/60/360x266/2054020718.jpg" alt="">
+    </div>
+    <button class="carousel-btn prev" onclick="move('c6',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="move('c6',1)">&#8250;</button>
+    <div class="carousel-dots" id="c6-dots"></div>
+    <div class="foto-count" id="c6-count">1/5</div>
+  </div>
+  <div class="prop-body">
+    <div class="prop-top"><div class="prop-title">Emprendimiento · Quilmes al 500 — Belgrano</div><div class="prop-price">USD 87.000</div></div>
+    <div class="prop-loc">Belgrano · San Carlos de Bariloche</div>
+    <div class="specs"><span class="spec">106 m²</span><span class="spec">2-4 amb</span><span class="spec">7 unidades</span></div>
+    <div class="tags"><span class="tag">Fideicomiso</span><span class="tag">Barrio Belgrano</span></div>
+    <div class="prop-desc">Fideicomiso Belgrano 160. 7 unidades de 2 a 4 ambientes entre 45 y 106 m² en el barrio Belgrano. Proyecto sólido con financiación.</div>
+  </div>
+</div>
+
+<div class="footer">Selección de propiedades · San Carlos de Bariloche · junio 2026</div>
+
+<script>
+const state = {};
+document.querySelectorAll('.carousel').forEach(car => {
+  const id = car.id;
+  const imgs = car.querySelectorAll('img');
+  const total = imgs.length;
+  state[id] = 0;
+  const dotsEl = document.getElementById(id+'-dots');
+  for (let i=0;i<total;i++) {
+    const d = document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>goTo(id,i);
+    dotsEl.appendChild(d);
+  }
+  // Swipe
+  let sx=0;
+  car.querySelector('.carousel-track').addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+  car.querySelector('.carousel-track').addEventListener('touchend',e=>{
+    const diff=sx-e.changedTouches[0].clientX;
+    if(Math.abs(diff)>40) move(id,diff>0?1:-1);
+  });
+});
+
+function goTo(id,n) {
+  const imgs = document.querySelectorAll('#'+id+' img');
+  const total = imgs.length;
+  state[id]=(n+total)%total;
+  document.querySelector('#'+id+' .carousel-track').style.transform='translateX(-'+(state[id]*100)+'%)';
+  document.querySelectorAll('#'+id+' .dot').forEach((d,i)=>d.className='dot'+(i===state[id]?' active':''));
+  document.getElementById(id+'-count').textContent=(state[id]+1)+'/'+total;
+}
+function move(id,dir){goTo(id,state[id]+dir);}
+</script>
+</body>
+</html>
